@@ -1,0 +1,94 @@
+@media (min-width: 576px){.wrap-page-new {max-width: 540px;}}
+@media (min-width: 768px){.wrap-page-new {max-width: 720px;}}
+@media (min-width: 992px){.wrap-page-new {max-width: 960px;}}
+@media (min-width: 1200px){.wrap-page-new {max-width: 1140px;}}
+@media (min-width: 1360px){.wrap-page-new {max-width: 1200px;}}
+/*responsive*/
+
+@media all and (max-width: 1800px) {
+    main#wrap-main .wrapper .wrap-form{padding-right: 15%;}
+}
+@media all and (max-width: 1366px) {
+    main#wrap-main .wrapper .wrap-form{padding-left: 80px}
+    nav.tab-control{width: 250px}
+}
+@media all and (max-width: 1280px) {
+    .wrapper {max-width: 100%}
+    main#wrap-main{overflow: hidden;}
+    main#wrap-main .wrapper .wrap-form {padding: 0px 12% 0 45px;}
+}
+@media all and (max-width: 1080px) {
+    main.page-index .form-row {margin-right: -9px;margin-left: -9px;}
+    main.page-index .form-row>[class*=col-] {padding-right: 9px;padding-left: 9px;}
+     .page-index label {font-size: 13px;}
+}
+@media all and (max-width: 1024px) {
+    /*index*/
+    main.page-index .form-row {margin-right: -5px;margin-left: -5px;}
+    main.page-index .form-row>[class*=col-] {padding-right: 5px;padding-left: 5px;}
+    body .set-layout {padding: 10px 20px;}
+    main#wrap-main .item-control .text-name h3 {font-size: 14px;}
+    .page-index label {margin-bottom: 14px;font-size: 12px;}
+    main#wrap-main .edit-Page {top:10px;right: 20px}
+    main#wrap-main .list-product .form-group h2 {margin-top: 0}
+    main#wrap-main .control-submit {margin-top: 10px;margin-bottom: 20px}
+}
+@media all and (max-width: 992px) {
+    .tab-control .logo-web {padding: 10px 13px;}
+    body .set-layout {margin-bottom: 15px}
+    input,select,textarea {height: 30px!important}
+    body .select-form select {background-position-x: 96.5%;background-size: 14px;}
+    main#wrap-main #tab-controls.active .logo-web {height: 50px;}
+    main#wrap-main .wrapper .wrap-form {padding: 0 30px!important;}
+    .showMenu {;left: 25px;height: 56px}
+    nav.tab-control {width: 230px;}
+    header#header {padding: 8px 0;}
+    nav.tab-control ul li a {padding-left: 15px}
+    nav.tab-control ul li:first-child a>img{height: 35px}
+    nav.tab-control ul li.item-sidebar a {padding: 15px 15px 15px 18px;}
+    .responsive-table{overflow-x: scroll;}
+    main#wrap-main p.name-details>a {white-space: nowrap;overflow: hidden; width: 100%;text-overflow: ellipsis;display: inline-block;}
+}
+@media all and (max-width: 768px) {
+    /*index*/
+    body{font-size: 13px}
+    /*button{width:100%!important;}*/
+    main#wrap-main.page-index .list-product{padding-left: 20px;padding-right: 20px}
+    button.btn {font-size: 14px;height: 40px;line-height: 1;}
+    .group-button button.btn{width: 100%}
+    .page-index label {margin-bottom: 10px;}
+    main.page-index .form-row {margin-bottom: 0}
+    main.page-index .control-index .form-group{margin-bottom: 0}
+    main#wrap-main .control-index button {margin-bottom: 15px}
+    main#wrap-main .list-product #customers {margin-top: 15px}
+    nav.tab-control {left: -100%;border-right: 1px solid var(--color-border);}
+    nav.tab-control ul li:first-child {border-right: none}
+    .showMenu {display:flex; }
+    .displayNone {display: block}
+    header#header>.container>.logo-web {display: block;}
+    header#header>.container>.logo-web {text-align: center;}
+    .details-history label {margin-bottom: 10px;font-family: var(--font-bold);color: #000}
+    main#wrap-main .name-details-history {margin-bottom: 20px}
+    main#wrap-main .list-product #customers tr td>a {width: 80px;padding: 6px 15px;}
+    main#wrap-main .list-product #customers td, main#wrap-main .list-product #customers th {width: calc((100% - 80px) / 2);padding: 7.5px 15px;}
+    main .row.row-name { margin-bottom: 20px;margin-top: 40px}
+    .wrapper-details .row label{font-family: var(--font-bold);color: #000}
+    main#wrap-main .list-product .form-group a.button {margin:0 15px;}
+    main#wrap-main .list-product .form-group h2 {padding-left: 15px;margin-bottom: 20px}
+    main#wrap-main .list-product { padding: 20px 0 0;}
+    form .form-row.checkbox-group .custom-checkbox {margin-bottom: 10px;padding-left: 30px!important}
+    form .group-button {margin:30px 0;display: grid; grid-template-columns: 1fr 1fr;grid-gap: 15px;}
+    main#wrap-main .control-submit {grid-gap: 15px}
+    main#wrap-main .pagilation ul li a {width: 30px;height: 30px;margin: 0 5px;font-size: 11px}
+    main#wrap-main .control-submit.control-detail-page-delete {grid-template-columns: 1fr;grid-gap: 0}
+    main#wrap-main .edit-Page>a {width: 80px}
+    main#wrap-main .back-page a{padding:10.5px 0;}
+    main#wrap-main .wrapper .wrap-form {padding: 0!important;}
+    #header.fixed-menu{position: fixed;top: 0;left: 0;width: 100%;z-index: 1;border-bottom: 1px solid var(--color-border)}
+}
+@media all and (max-width: 576px) {
+    main#wrap-main .wrapper .wrap-form {padding: 0;}
+    .showMenu {left: 15px}
+    footer#footer p {font-size: 13px;}
+    main#wrap-main .list-product .responsive-table table {width: 200%!important}
+}
