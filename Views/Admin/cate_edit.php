@@ -13,8 +13,7 @@
                                 <label>Tên danh mục</label>
                                 <input class="form-control" name="name" placeholder="Vui lòng nhập tên danh mục" value="<?= $data['data']['name'] ?>" /> 
                             </div>
-                            
-                            
+                           
                             <button type="submit" name="submit" class="btn btn-success">Sửa</button>
                             
                         <form>

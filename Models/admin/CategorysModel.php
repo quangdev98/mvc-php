@@ -14,54 +14,39 @@ class CategorysModel extends database{
 			return [];
 		}
 	}
-	public function add(){
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if (!empty($_POST['name'])){ $name = $_POST['name']; }
+	public function add($name){
 			$sql_ = "INSERT INTO category(name) VALUES('$name')";
 			$stmt= $this->conn->prepare($sql_);
-			$result = $stmt->execute();
-			if ($result) {
-				header('location: '.Helper::getUrlPage(category));
-
-			}
-		}
-			 // echo "Thêm dữ liệu thành côngfgdgfj";
+			return $stmt->execute();
 	}
-	public function update(){
-		try{
-
-		$id= $_GET['id'];
-		$sql_ = "SELECT * FROM category WHERE category.id = $id";
-		$stmt= $this->conn->prepare($sql_);
-		// $stmt->setFetchMode(PDO::FETCH_OBJ);
-		$stmt->execute();
-		$red = $stmt->fetch(PDO::FETCH_BOTH);
-		if (isset($_POST['submit'])) {
-			if (!empty($_POST['name'])){ $name = $_POST['name']; }$name = $_POST['name'];
-			$update = "UPDATE category SET name = '$name' WHERE id = $id";
-			$query= $this->conn->prepare($update);
-			$results = $query->execute();
-			if ($results) {
-				header('location: '.Helper::getUrlPage(category));
-			}
-		}
-		return $red;
-		}catch (PDOException $e){
-			echo $e->getMessage();
-			return [];
-		}
+	public function getdata($id)
+	{
+			$sql_ = "SELECT * FROM category WHERE category.id = $id";
+			$stmt= $this->conn->prepare($sql_);
+			$stmt->execute();
+			// print_r($stmt->fetch(PDO::FETCH_BOTH));	
+			return $stmt->fetch(PDO::FETCH_BOTH);
 	}
-	public function delete(){
-		$id= $_GET['id'];
+
+	// public function update($name,$id){
+	// 	try{
+			
+	// 		$update = "UPDATE category SET name = '$name' WHERE id = $id";
+	// 		$query= $this->conn->prepare($update);
+	// 		return $query->execute();
+			
+
+	// 	}catch (PDOException $e){
+	// 		echo $e->getMessage();
+	// 		return [];
+	// 	}
+	// }
+	public function delete($id){
+		// $id= $_GET['id'];
 		$sql_ = "DELETE FROM category WHERE category.id = $id";
 		$stmt= $this->conn->prepare($sql_);
-		$result = $stmt->execute();
-		if ($result) {
-			if ($result) {
-				header('location: '.Helper::getUrlPage(category));
-
-			}
-		}
+		return $stmt->execute();
+		
 	}
 
 }

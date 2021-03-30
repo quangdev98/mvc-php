@@ -5,7 +5,7 @@
                         <h1 class="page-header">User
                             <small>List</small>
                         </h1>
-                        <p class="addQuery"> <a href="/users/add">Add User</a></p>
+                        <p class="addQuery"> <a href="/users/create">Add User</a></p>
                     </div>
                     <!-- /.col-lg-12 -->
                     <table class="table table-striped table-bordered table-hover" id="customers">
@@ -28,8 +28,8 @@
                                 <td><?= $val->phone ?></td>
                                 <td><?= $val->email ?></td>
                                 <td>Hiện</td>
-                                <td class="center"><a href="#"><i class="fad fa-trash-alt"></i></a></td>
-                                <td class="center"><a href="#"><i class="fad fa-pencil"></i></a></td>
+                                <td class="center"><a href="/users/delete?id=<?= $val->id ?>"><i class="fad fa-trash-alt"></i></a></td>
+                                <td class="center"><a href="/users/update?id=<?= $val->id ?>"><i class="fad fa-pencil"></i></a></td>
                             </tr>
                            <?php } ?>
                         </tbody>
