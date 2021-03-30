@@ -1,5 +1,14 @@
 <?php
+require_once "Services/CategoryService.php";
+
 class category extends Controller{
+
+  private $service;
+
+  public function __construct(){
+    $this->service = new CategoryService();
+  }
+
 	function index(){
 		$getCate = $this->model('admin/CategorysModel');
   		$this->view('Admin/master',[
@@ -8,24 +17,35 @@ class category extends Controller{
   		]);
 	}
 	function add_cate(){
-    $CateAdd = $this->model('admin/CategorysModel');
+    $status = $this->service->create();
+
 		$this->view('Admin/master',[
 			"Page"=>'cate_add',
-      'data'=>$CateAdd->add()
+      'data'=>$status
 		]);
 	}
-  function update(){
-    $getCate = $this->model('admin/CategorysModel');
-      $this->view('Admin/master',[
-        "Page"=>'cate_edit',
-        'data'=>$getCate->update()
-      ]);
+  function dataCate(){
+    $cateService = $this->service->getData();
+    var_dump($cateService);
+    $this->view('Admin/master',[
+      "Page"=>'cate_edit',
+      'data'=>$cateService
+    ]);
   }
+
+  // function update(){
+  //    $status = $this->service->update();
+
+  //     $this->view('Admin/master',[
+  //       "Page"=>'cate_edit',
+  //       'data'=>$status
+  //     ]);
+  // }
   function delete(){
-    $CateDelete = $this->model('admin/CategorysModel');
+     $status = $this->service->destroy($id);
     $this->view('Admin/master',[
       "Page"=>'cate_list',
-      'data'=>$CateDelete->delete()
+      'data'=>$status
     ]);
   }
 }

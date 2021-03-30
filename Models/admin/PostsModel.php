@@ -4,7 +4,7 @@
 			try{
 				$productQuery = "SELECT post.id,post.title,post.contentHot,category.name as categoryName, user.name as author FROM post 
 				LEFT JOIN category on post.cate_id = category.id
-				LEFT JOIN user on post.user_id = user.id";
+				LEFT JOIN user on post.user_id = user.id ORDER BY id ASC";
 				$pro = $this->conn->prepare($productQuery);
 				$pro -> setFetchMode(PDO::FETCH_OBJ);
 				$pro->execute();
@@ -22,7 +22,7 @@
 				if (!empty($_POST['tag'])){ $tag = $_POST['tag']; }
 				if (!empty($_FILES['image']['name'])) {
 					$imageFile = $_FILES['image'];
-					move_uploaded_file($imageFile['tmp_name'], '../../Assets/Admin_asset/images/post/'.$imageFile['name']);
+					move_uploaded_file($imageFile['tmp_name'], './Assets/Admin_asset/images/post/'.$imageFile['name']);
 					$image= $imageFile['name'];
 				}
 				if (!empty($_POST['content'])){ $content = $_POST['content']; }
@@ -30,10 +30,13 @@
 				if (!empty($_POST['cate_id'])){ $cate_id = $_POST['cate_id']; }
 				$sql_ = "INSERT INTO post(title,contentHot,image,tag,content,user_id,cate_id) 
 						VALUES('$title','$contentHot','$image','$tag','$content','$user_id','$cate_id')";
+
 				$stmt = $this->conn->prepare($sql_);
-				$result = $stmt->execute();
+				$data = [$title,$contentHot,$image,$id];
+				$result = $stmt->execute($data);
 				if ($result) {
 					header('location: '.Helper::getUrlPage(posts));
+					// var_dump($_FILES);
 				} else{
 					echo "Có lỗi trong quá trình thêm mới <br/> Vui lòng thử lại.";
 				}

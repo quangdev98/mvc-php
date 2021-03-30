@@ -27,7 +27,7 @@
                     <td><?= $cate->numberPost ?></td>
                     <!-- <td>Hiện</td> -->
                     <td class="center"><a href="/category/delete?id=<?= $cate->id ?>"><i class="fad fa-trash-alt"></i></a></td>
-                    <td class="center"><a href="/category/update?id=<?= $cate->id ?>"><i class="fad fa-pencil"></i></a></td>
+                    <td class="center"><a href="/category/dataCate?id=<?= $cate->id ?>"><i class="fad fa-pencil"></i></a></td>
                 </tr>
                 <?php } ?>
             </tbody>

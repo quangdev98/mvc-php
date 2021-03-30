@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
                 <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
